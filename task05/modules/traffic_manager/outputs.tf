@@ -3,5 +3,5 @@ output "tm_id" {
 }
 
 output "fqdn" {
-    value = azurerm_traffic_manager_profile.tm.fqdn
+  value = azurerm_traffic_manager_profile.tm.fqdn
 }

@@ -1,13 +1,13 @@
 variable "asp_name" {
-    type = string
+  type = string
 }
 
 variable "asp_sku" {
-    type = string
+  type = string
 }
 
 variable "asp_capacity" {
-    type = number
+  type = number
 }
 
 variable "resource_group_name" {
