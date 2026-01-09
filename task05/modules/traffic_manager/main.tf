@@ -21,3 +21,12 @@ resource "azurerm_traffic_manager_profile" "tm" {
 }
 
 
+resource "azurerm_traffic_manager_azure_endpoint" "tmae" {
+
+  for_each = var.app_endpoints
+
+  name               = "endpoint-${each.value.name}"
+  profile_id         = azurerm_traffic_manager_profile.tm.id
+  target_resource_id = each.value.id
+  weight             = 100
+}

@@ -33,3 +33,14 @@ variable "tm" {
 variable "student_email" { type = string }
 variable "tags" { type = map(string) }
 
+variable "vert_ip" {
+  type = string
+}
+
+variable "allow_ip_rule" {
+  type = string
+}
+
+variable "allow_tm_rule" {
+  type = string
+}

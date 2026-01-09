@@ -1,30 +1,30 @@
 resource_groups = {
   rg1 = {
-    name     = "rg-zahar-useast-lab"
+    name     = "cmaz-5mhifrjl-mod5-rg-01"
     location = "East US"
   }
   rg2 = {
-    name     = "rg-zahar-westeurope-lab"
+    name     = "cmaz-5mhifrjl-mod5-rg-02"
     location = "West Europe"
   }
 
   rg3 = {
-    name     = "rg-zahar-centralus-tm"
+    name     = "cmaz-5mhifrjl-mod5-rg-03"
     location = "Central US"
   }
 }
 
 asp = {
   asp1 = {
-    name       = "asp-zahar-use-001"
+    name       = "cmaz-5mhifrjl-mod5-asp-01"
     sku        = "S1"
-    capacity   = 1
+    capacity   = 2
     linked_rg  = "rg1"
     linked_asp = "asp1"
   }
 
   asp2 = {
-    name       = "asp-zahar-westeurope"
+    name       = "cmaz-5mhifrjl-mod5-asp-02"
     sku        = "S1"
     capacity   = 1
     linked_rg  = "rg2"
@@ -34,26 +34,28 @@ asp = {
 
 app_services = {
   site1 = {
-    name       = "webapp-zahar-useast-001"
+    name       = "cmaz-5mhifrjl-mod5-app-01"
     linked_rg  = "rg1"
     linked_asp = "asp1"
   }
   site2 = {
-    name       = "webapp-zahar-westeurope-001"
+    name       = "cmaz-5mhifrjl-mod5-app-02"
     linked_rg  = "rg2"
     linked_asp = "asp2"
   }
 }
 
 tm = {
-  name           = "tm-zahar-global-DNS"
+  name           = "cmaz-5mhifrjl-mod5-traf"
   routing_method = "Performance"
 }
 
 student_email = "zakhar_saprun@epam.com"
 
 tags = {
-  Environment = "Lab"
-  Task        = "Task05"
-  Creator     = "zakhar_saprun@epam.com"
+  Creator = "zakhar_saprun@epam.com"
 }
+
+
+allow_ip_rule = "allow-ip"
+allow_tm_rule = "allow-tm"

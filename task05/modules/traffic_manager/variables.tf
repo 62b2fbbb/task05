@@ -13,3 +13,15 @@ variable "resource_group_name" {
 variable "tags" {
   type = map(string)
 }
+
+variable "app_services" {
+  type = map(string)
+}
+
+variable "app_endpoints" {
+  description = "Map of App Services (IDs and Names)"
+  type = map(object({
+    name = string
+    id   = string
+  }))
+}
