@@ -1,25 +1,25 @@
 variable "name" {
-  type = string
+  description = "The name of the Traffic Manager Profile."
+  type        = string
 }
 
 variable "routing_method" {
-  type = string
+  description = "The routing method for the Traffic Manager (e.g., Performance, Priority, Weighted)."
+  type        = string
 }
 
 variable "resource_group_name" {
-  type = string
+  description = "The name of the Resource Group where the Traffic Manager will be created."
+  type        = string
 }
 
 variable "tags" {
-  type = map(string)
-}
-
-variable "app_services" {
-  type = map(string)
+  description = "A map of tags to apply to the Traffic Manager resource."
+  type        = map(string)
 }
 
 variable "app_endpoints" {
-  description = "Map of App Services (IDs and Names)"
+  description = "Map containing names and resource IDs of the App Services to be added as endpoints to the Traffic Manager."
   type = map(object({
     name = string
     id   = string

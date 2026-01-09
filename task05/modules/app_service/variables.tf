@@ -1,29 +1,39 @@
 variable "as_name" {
-  type = string
+  description = "The name of the Windows Web App."
+  type        = string
 }
 
 variable "rg_name" {
-  type = string
+  description = "The name of the Resource Group where the Web App will be deployed."
+  type        = string
 }
 
 variable "rg_loc" {
-  type = string
+  description = "The Azure region for the Web App deployment."
+  type        = string
 }
 
 variable "service_plan_id" {
-  type = string
+  description = "The ID of the App Service Plan that will host this Web App."
+  type        = string
 }
 
 variable "vert_ip" {
-  type = string
+  description = "The IP address allowed to access the Web App (Verification Agent)."
+  type        = string
 }
 
 variable "allow_ip_rule" {
+  description = "The name for the IP restriction rule allowing the Verification Agent."
   type        = string
-  description = "Name for the IP allow rule"
 }
 
 variable "allow_tm_rule" {
+  description = "The name for the IP restriction rule allowing Azure Traffic Manager traffic."
   type        = string
-  description = "Name for the Traffic Manager allow rule"
+}
+
+variable "tags" {
+  description = "A map of tags to apply to the Traffic Manager resource."
+  type        = map(string)
 }

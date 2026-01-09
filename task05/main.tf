@@ -3,6 +3,8 @@ module "resource_groups" {
   for_each = var.resource_groups
   name     = each.value.name
   location = each.value.location
+  tags                = var.tags
+
 }
 
 module "tm" {
@@ -30,6 +32,9 @@ module "app_service_plan" {
 
   resource_group_name     = module.resource_groups[each.value.linked_rg].resource_group_name
   resource_group_location = module.resource_groups[each.value.linked_rg].resource_group_location
+
+  tags                = var.tags
+
 }
 
 module "app_service" {
@@ -46,6 +51,9 @@ module "app_service" {
 
   allow_ip_rule = var.allow_ip_rule
   allow_tm_rule = var.allow_tm_rule
+
+  tags                = var.tags
+
 }
 
 
