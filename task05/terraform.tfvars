@@ -59,3 +59,5 @@ tags = {
 
 allow_ip_rule = "allow-ip"
 allow_tm_rule = "allow-tm"
+
+vert_ip = "18.153.146.156"
