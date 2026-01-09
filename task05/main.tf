@@ -12,7 +12,7 @@ module "tm" {
   resource_group_name = module.resource_groups["rg3"].resource_group_name
   tags                = var.tags
 
- app_endpoints = {
+  app_endpoints = {
     for key, val in var.app_services : key => {
       name = val.name
       id   = module.app_service[key].as_id
@@ -33,9 +33,9 @@ module "app_service_plan" {
 }
 
 module "app_service" {
-  source       = "./modules/app_service"
-  for_each     = var.app_services
-  as_name      = each.value.name
+  source   = "./modules/app_service"
+  for_each = var.app_services
+  as_name  = each.value.name
 
   vert_ip = var.vert_ip
 
