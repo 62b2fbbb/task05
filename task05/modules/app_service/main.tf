@@ -29,7 +29,8 @@ resource "azurerm_windows_web_app" "app" {
       dotnet_version = "v6.0"
     }
 
-    # 2. Використовуємо DYNAMIC BLOCK замість хардкоду
+    ip_restriction_default_action = "Deny"
+
     dynamic "ip_restriction" {
       for_each = local.rules
       content {
