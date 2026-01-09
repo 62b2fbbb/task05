@@ -5,4 +5,5 @@ resource "azurerm_service_plan" "asp" {
   os_type             = "Windows"
   sku_name            = var.asp_sku
   worker_count        = var.asp_capacity
+  tags                = var.tags
 }
